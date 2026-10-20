@@ -23,14 +23,30 @@
 <main class="dashboard">
   <aside aria-label="Subjects">
     <h2>Subjects</h2>
-    <article data-status="todo" />     <!-- TODO 1 -->
-    <article data-status="doing" /> 
-    <article data-status="done" /> 
+    <!-- TODO 1 -->
   </aside>
 
   <section id="tasks">
     <h2>Task Board</h2>
-    <!-- TODO 2 -->
+    <form id="task-form">
+  <label for="task-input" class="visually-hidden">New task</label>
+  <input id="task-input" type="text" placeholder="Add a new task..." required />
+  <button type="submit">Add</button>
+</form>
+  <article data-status="todo">
+    <h3>To Do</h3>
+    <ul>
+      <!-- Tasks will be populated by JavaScript -->
+    </ul>
+  </article>
+
+  <article data-status="doing">
+    <h3>Doing</h3>
+  </article>
+
+  <article data-status="done">
+    <h3>Done</h3>    
+  </article>
   </section>
 
   <section id="notes">
@@ -47,4 +63,5 @@
 </body>
 
 <script src="js/script.js"></script>
+
 </html>

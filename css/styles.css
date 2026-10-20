@@ -355,6 +355,73 @@ header nav ul {
 }
 
 /* end of dashboard styles */
+
+/* ---------- Task interactions ---------- */
+#task-form {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#task-form input {
+  flex: 1;
+  padding: 0.6rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+#task-form button {
+  padding: 0.6rem 1.2rem;
+  font: inherit;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--primary);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+#tasks li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.task-actions button {
+  padding: 0.2rem 0.5rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-actions button:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.task-actions button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
 @media (max-width: 480px) {
   .signup-form { padding: 1.5rem; }
 }
