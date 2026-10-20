@@ -186,6 +186,158 @@ nav a:hover {
   color: var(--primary);
 }
 
+
+
+/* ---------- Dashboard layout (Grid) ---------- */
+.dashboard {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-areas:
+    "sidebar tasks"
+    "sidebar notes"
+    "sidebar progress";
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard > aside {
+  grid-area: sidebar;
+}
+#tasks {
+  grid-area: tasks;
+}
+#notes {
+  grid-area: notes;
+}
+#progress {
+  grid-area: progress;
+}
+
+/* Cards: shared look for every dashboard block */
+.dashboard > aside,
+.dashboard > section {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.dashboard h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Sidebar subjects */
+.dashboard aside li a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+}
+
+.dashboard aside li a:hover {
+  background: var(--bg);
+  color: var(--primary);
+}
+
+/* Task board: three equal columns */
+#tasks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+#tasks > h2 {
+  grid-column: 1 / -1; /* heading spans all columns */
+  margin-bottom: 0;
+}
+
+#tasks article {
+  padding: 1rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+}
+
+#tasks article h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+#tasks li {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+/* Notes form */
+#notes form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#notes input,
+#notes textarea {
+  padding: 0.6rem;
+  font: inherit;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+#notes textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#notes button {
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  font: inherit;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--primary);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+#notes button:hover {
+  background: var(--primary-dark);
+}
+
+/* Progress */
+#progress progress {
+  width: 100%;
+  height: 12px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "sidebar"
+      "tasks"
+      "notes"
+      "progress";
+    padding: 1rem;
+  }
+
+  #tasks {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* end of dashboard styles */
 @media (max-width: 480px) {
   .signup-form { padding: 1.5rem; }
 }
