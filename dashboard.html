@@ -16,13 +16,16 @@
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="#signup">Sign up</a></li>
       </ul>
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
     </nav>
 </header> 
 
 <main class="dashboard">
   <aside aria-label="Subjects">
     <h2>Subjects</h2>
-    <!-- TODO 1 -->
+    <article data-status="todo" />     <!-- TODO 1 -->
+    <article data-status="doing" /> 
+    <article data-status="done" /> 
   </aside>
 
   <section id="tasks">
@@ -42,4 +45,6 @@
 </main>
 
 </body>
+
+<script src="js/script.js"></script>
 </html>
