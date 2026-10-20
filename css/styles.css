@@ -176,6 +176,16 @@ header nav ul {
 .form-footer a:hover { text-decoration: underline; }
 
 
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
 @media (max-width: 480px) {
   .signup-form { padding: 1.5rem; }
 }
